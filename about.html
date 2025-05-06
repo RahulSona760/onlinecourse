@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+   
+</head>
+<body>
+    <nav>
+        <img src="Black Yellow Minimalist Brain Logo.png" alt="">
+        <div class="navigation">
+            <ul>
+                <i id="menu-close"  class="fa-solid fa-square-xmark"></i>
+            <li><a href="index.html">Home</a></li>
+            <li><a  class="active" href="about.html">About</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="course.html">Courses</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul> 
+        <img id="menu-btn" src="menu.png" alt="">
+        </div>
+    </nav>
+
+    <!-- home -->
+
+    <section id="about-home">
+        <h2>About Learning Tech /</h2>
+    
+    </section>
+
+
+    <section id="about-container">
+        <div class="about-img">
+            <img src="images/a.png" alt="">
+        </div>
+
+        <div class="about-text">
+            <h2>Welcome to Learning Tech, Enhance your skil wit best online courses </h2>
+            <p>You can start and finish one of these popular courses in under a day- for free!Check out of theselist below. Take the course for free</p>
+            <div class="about-fe">
+                <img src="images/fe1.png" alt="">
+                <div class="fe-text">
+                    <h5>400 course</h5>
+                    <p>you can start and finish one of these popular courses</p>
+                </div>
+            </div>
+            <div class="about-fe">
+                <img src="images/fe2.png" alt="">
+                <div class="fe-text">
+                    <h5>Lifetime Access</h5>
+                    <p>you can start and finish one of these popular courses</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- features -->
+     <section id="features">
+    <h1>Awesome Feature</h1>
+    <p>Repelinsh man have things gathering lights yielding shall you</p>
+
+
+    <div class="fea-base">
+        <div class="fea-box">
+            <i class="fa-solid fa-graduation-cap"></i>
+            <h3>ScholarShip Facility</h3>
+            <p>One more creepeth, man bearing their firament won't great heaven </p>
+        </div>
+        <div class="fea-box">
+            <i class="fa-solid fa-certificate"></i>
+            <h3>Gloabl Certifiction</h3>
+            <p>One more creepeth, man bearing their firament won't great heaven </p>
+        </div>
+        <div class="fea-box">
+            <i class="fa-solid fa-award"></i>
+            <h3>Sell Online </h3>
+            <p>One more creepeth, man bearing their firament won't great heaven </p>
+        </div>
+    </div>
+     </section>
+
+
+     <section id="trust">
+        <h1>Trusted BY</h1>
+
+        <p>Replenish man thing gathering light yeilding shsll you</p>
+        <div class="trust-img">
+            <img src="images/trust (1).png" alt="">
+            <img src="images/trust (2).png" alt="">
+            <img src="images/trust (3).png" alt="">
+            <img src="images/trust (4).png" alt="">
+            <img src="images/trust (5).png" alt="">
+            <img src="images/trust (6).png" alt="">
+        </div>
+     </section>
+
+     <footer >
+        <div class="footer-col">
+            <h3>Top Product </h3>
+            <li>Manage Reputation</li>
+            <li>Power Tools</li>
+            <li>Managed Websites</li>
+            <li>Marketing Service</li>
+        </div>
+        <div class="footer-col">
+            <h3>Quick Links</h3>
+            <li>Jobs</li>
+            <li>Brands</li>
+            <li>Investers Relation</li>
+            <li>Terms and Conditions</li>
+        </div>
+        <div class="footer-col">
+            <h3>Features</h3>
+            <li>Manage Reputation</li>
+            <li>Power Tools</li>
+            <li>Managed Websites</li>
+            <li>Marketing Service</li>
+        </div>
+        <div class="footer-col">
+            <h3>Resources </h3>
+            <li>MGuides</li>
+            <li>Research</li>
+            <li>Experts</li>
+            <li>Marketing Service</li>
+        </div>
+        <div class="footer-col">
+            <h3>News Letter</h3>
+            <p>You can trust us.We only send promo offers</p>
+            <div class="subscribe">
+                <input type="text" placeholder="Your Email Address">
+                <a href="" class="yellow">Subscribe</a>
+            </div>
+        </div>
+    
+        <div class="copyright">
+            <p>Copyright 2021 All right reserverd | This templates is made by TechEdu</p>
+            <div class="pro-links">
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-linkedin"></i>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    
+    <script>
+        $('#menu-btn').click(function(){
+            $('nav .navigation ul') .addClass('active')
+        });
+        $('#menu-close').click(function(){
+            $('nav .navigation ul') .removeClass('active')
+        });
+
+        const sr = ScrollReveal({
+    distance :'40px',
+    duration:2050,
+    delay:100,
+    reset:true
+
+});
+sr.reveal('#home h2 ',{origin:'top, bottom'});
+sr.reveal('.profile,.date ,.about-img, .trust-img img, #about-home h2',{origin:'top'});
+sr.reveal('.about-text h2,.text-center,.right-contact h2,.row',{origin:'top'});
+sr.reveal('.left-contact',{origin:'left'});
+sr.reveal('.right-contact',{origin:'right'});
+sr.reveal('.end-section',{origin:'top'});
+</script>
+    </script>
+     
+</body>
+</html>
