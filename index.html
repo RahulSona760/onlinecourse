@@ -210,11 +210,14 @@
 
 
      <section id ="registration">
+
+       
         <div class="reminder">
             <p>Get 100 Olinlie Courses for free</p>
             <h1>Register to get it </h1>
+            <div class="clock" id="digitalClock">00:00:00 AM</div>
 
-            <div class="time">
+            <!-- <div class="time">
                 <div class="date">
                     18 <br> Days
                 </div>
@@ -227,8 +230,9 @@
                 <div class="date">
                     58 <br> Secd
                 </div>
-            </div>
+            </div> -->
         </div>
+       
         <div class="form">
             <h3>Create Free Account NOW! </h3>
             <input type="text" placeholder="Name ">
@@ -368,6 +372,31 @@ sr.reveal('.about-text h2,.text-center,.right-contact h2,.row',{origin:'top'});
 sr.reveal('.left-contact',{origin:'left'});
 sr.reveal('.right-contact',{origin:'right'});
 sr.reveal('.end-section',{origin:'top'});
+
+  function updateClock() {
+      const now = new Date();
+      let hours = now.getHours();
+      const minutes = now.getMinutes();
+      const seconds = now.getSeconds();
+      const ampm = hours >= 12 ? 'PM' : 'AM';
+
+      hours = hours % 12;
+      hours = hours ? hours : 12; // the hour '0' should be '12'
+
+      const format = (num) => num.toString().padStart(2, '0');
+
+      const currentTime = `${format(hours)}:${format(minutes)}:${format(seconds)} ${ampm}`;
+      document.getElementById('digitalClock').textContent = currentTime;
+    }
+
+    setInterval(updateClock, 1000);
+    updateClock();
+
+
+  
+   
+
+
 </script>
 </body>
 </html>
