@@ -35,7 +35,7 @@
              or a pro, there's something here for everyone.</p>
     <div class="btn">
         <a class="blue" href="">Learn More</a>
-        <a class="yellow"href="">Visit Courses</a>
+        <a class="yellow"href="course.html">Visit Courses</a>
     </div>
     </section>
 
@@ -232,17 +232,20 @@
                 </div>
             </div> -->
         </div>
-       
-        <div class="form">
+
+        <form name="submit-to-google-sheet">
+        <div class="form" >
             <h3>Create Free Account NOW! </h3>
-            <input type="text" placeholder="Name ">
-            <input type="text" placeholder="EmailAddress">
-            <input type="text" placeholder="Phone Number">
+           
+            <input type="text" name="name" placeholder="Name ">
+            <input type="email" name="email" placeholder="EmailAddress">
+            <input type="number" name="number" placeholder="Phone Number">
             <div class="btn">
-                <a class="yellow" href="">Submit</a>
-               
+            <button type="submit">Submit</button>
+                <!-- <a class="yellow" href="">Submit</a> -->
             </div>
         </div>
+        </form>
      </section>
 
 <!-- profiles -->
@@ -263,7 +266,7 @@
         </div>
 
         <div class="profile">
-            <img src="pro1.webp" alt="">
+            <img src="https://thumbs.dreamstime.com/b/portrait-confident-african-american-male-teacher-class-71530272.jpg" alt="">
             <h4>Jason</h4>
             <p>Data Structure & Algorithim</p>
             <div class="pro-links">
@@ -348,9 +351,16 @@
     </div>
 </footer>
 
+
+
+<form >
+  <input name="email" type="email" placeholder="Email" required>
+  <button type="submit">Send</button>
+</form>
 <script src="https://unpkg.com/scrollreveal"></script>
-<script>
-    $('#menu-btn').click(function(){
+
+ window.sr = ScrollReveal();
+  $('#menu-btn').click(function(){
         $('nav .navigation ul') .addClass('active')
     });
     $('#menu-close').click(function(){
@@ -373,31 +383,7 @@ sr.reveal('.left-contact',{origin:'left'});
 sr.reveal('.right-contact',{origin:'right'});
 sr.reveal('.end-section',{origin:'top'});
 
-  function updateClock() {
-      const now = new Date();
-      let hours = now.getHours();
-      const minutes = now.getMinutes();
-      const seconds = now.getSeconds();
-      const ampm = hours >= 12 ? 'PM' : 'AM';
-
-      hours = hours % 12;
-      hours = hours ? hours : 12; // the hour '0' should be '12'
-
-      const format = (num) => num.toString().padStart(2, '0');
-
-      const currentTime = `${format(hours)}:${format(minutes)}:${format(seconds)} ${ampm}`;
-      document.getElementById('digitalClock').textContent = currentTime;
-    }
-
-    setInterval(updateClock, 1000);
-    updateClock();
-
-
-  
-   
-
-
-</script>
+<script src="app.js"></script>
 </body>
 </html>
 
