@@ -16,9 +16,9 @@
         <div class="navigation">
             <ul>
                 <i id="menu-close"  class="fa-solid fa-square-xmark"></i>
-            <li><a    href="index.html">Home</a></li>
+            <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
-            <li><a  class="active" href="blog.html">Blog</a></li>
+            <li><a class="active" href="blog.html">Blog</a></li>
             <li><a href="course.html">Courses</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul> 
@@ -159,7 +159,8 @@
     </div>
 </footer>
 
-
+<!-- Scroll reveal functionality -->
+<script src="https://unpkg.com/scrollreveal"></script>
 <script>
     $('#menu-btn').click(function(){
         $('nav .navigation ul') .addClass('active')
@@ -167,6 +168,21 @@
     $('#menu-close').click(function(){
         $('nav .navigation ul') .removeClass('active')
     });
+     const sr = ScrollReveal({
+    distance :'40px',
+    duration:3000,
+    delay:70,
+    reset:true
+
+});
+sr.reveal('#home h2', { origin: 'top' });
+sr.reveal('#home h2', { origin: 'bottom' });
+
+sr.reveal('.profile,.date ,.about-text',{origin:'top'});
+sr.reveal('.about-text h2,.text-center,.right-contact h2,.row',{origin:'top'});
+sr.reveal('.left-contact',{origin:'left'});
+sr.reveal('.right-contact',{origin:'right'});
+sr.reveal('.end-section',{origin:'top'});
 </script>
 </body>
 </html>
