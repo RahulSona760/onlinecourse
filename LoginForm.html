@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="contactForm.css">
+     
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<!-- ✅ Firebase SDK for BROWSER, not modules -->
+<!-- Firebase SDK v8 -->
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+<!--  =================== Firebase Config================== -->
+<script>
+  
+  var firebaseConfig = {
+    apiKey: "AIzaSyAFG23o6CWidoYcaebdVxOf1FoVIc_Icl0",
+    authDomain: "onlinecourseselling.firebaseapp.com",
+    projectId: "onlinecourseselling",
+    storageBucket: "onlinecourseselling.appspot.com",
+    messagingSenderId: "928895642030",
+    appId: "1:928895642030:web:8c3113adedd42f5637c03f",
+    measurementId: "G-X1771QJ9EB"
+  };
+
+  // ✅ Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+   // =================== Firebase Initialization ===================
+document.addEventListener("DOMContentLoaded", () => {
+  const firebaseConfig = {
+    apiKey: "AIzaSyAFG23o6CWidoYcaebdVxOf1FoVIc_Icl0",
+    authDomain: "onlinecourseselling.firebaseapp.com",
+    projectId: "onlinecourseselling",
+    storageBucket: "onlinecourseselling.firebasestorage.app",
+    messagingSenderId: "928895642030",
+    appId: "1:928895642030:web:8c3113adedd42f5637c03f",
+    measurementId: "G-X1771QJ9EB"
+  };
+
+  if (!firebase.apps.length) {
+    firebase.initializeApp(firebaseConfig);
+  }
+});
+
+// =================== Redirect If Logged In ===================
+// firebase.auth().onAuthStateChanged((user) => {
+//   if (user) {
+//     window.location.href = "dashboard.html";
+//   }
+// });
+
+// =================== Contact Form Submission ===================
+
+// 📬 Contact form logic
+const form = document.getElementById("messageForm");
+const successMsg = document.getElementById("successMsg");
+
+if (form && successMsg) {
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    // Get form values (optional validation)
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("emailContact").value.trim();
+    const subject = document.getElementById("subject").value.trim();
+    const message = document.getElementById("message").value.trim();
+
+    if (!name || !email || !subject || !message) {
+      alert("Please fill in all fields.");
+      return;
+    }
+
+    successMsg.style.display = "block";
+    form.reset();
+    setTimeout(() => {
+      successMsg.style.display = "none";
+    }, 4000);
+  });
+}
+
+
+// ==================Welcome message after login=====================
+function login() {
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
+
+  if (!email || !password) {
+    alert("Please enter email and password!");
+    return;
+  }
+
+  firebase.auth().signInWithEmailAndPassword(email, password)
+    .then((userCredential) => {
+      const user = userCredential.user;
+      const userName = user.displayName || user.email.split("@")[0]; // fallback to email if no name
+      showWelcomeMessage(userName);
+    })
+    .catch((error) => {
+      alert("Login failed: " + error.message);
+    });
+}
+
+function showWelcomeMessage(name) {
+  const welcome = document.createElement("p");
+  welcome.classList.add("welcome-msg");
+  welcome.innerText = `Heartly welcome Mr. ${name}`;
+  
+  document.querySelector(".container").appendChild(welcome);
+
+  setTimeout(() => {
+    welcome.remove();
+  }, 5000); // remove after 5s
+}
+
+</script>
+</head>
+<body>
+  
+
+ <!--=============== Email/Password Login================ -->
+<div class="container">
+    <h1>Login to Continue</h1>
+
+    
+    <input type="email" id="email" placeholder="Email" />
+    <input type="password" id="password" placeholder="Password" />
+    <p id="errorMsg" style="color: red; display: none;"></p>
+    <p id="successMsg" style="color: green; display: none; font-size: 26px;">✅ Signup successful!</p>
+    <button onclick="signUp()">Sign Up</button>
+    <button onclick="login()">Login</button>
+
+    <p class="divider">OR</p>
+
+    <!-- Google / Facebook -->
+    <button class="google-btn" onclick="signInWithGoogle()">Login with Google</button>
+    <button class="facebook-btn" onclick="signInWithFacebook()">Login with Facebook</button>
+    <button class="logout-btn" onclick="logout()">Logout</button>
+
+    <!-- User Info -->
+    <div class="user-info" id="user-info" style="display: none;">
+      <!-- <img id="user-pic" src="" alt="User Picture" /> -->
+      <p id="user-name"></p>
+      <p id="user-email"></p>
+    </div>
+  </div>
+<script src="https://unpkg.com/scrollreveal"></script>
+
+
+
+ <!-- ========================JS Logic  FireBase====================-->
+    <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      const auth = firebase.auth();
+
+      // 🔐 Auth Functions
+      function showUser(user) {
+        document.getElementById("user-info").style.display = "block";
+        //document.getElementById("user-pic").src = user.photoURL || "";
+        document.getElementById("user-name").innerText = "Hello, " + (user.displayName || "User");
+        document.getElementById("user-email").innerText = user.email;
+      }
+
+
+
+      window.signUp = function () {
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+
+        auth.createUserWithEmailAndPassword(email, password)
+          .then((userCredential) => {
+           const successMsg = document.getElementById("successMsg");
+    successMsg.innerText = "✅ Signup successful!";
+    successMsg.style.display = "block";
+            showUser(userCredential.user);
+                setTimeout(() => {
+      successMsg.style.display = "none";
+    }, 4000);
+          })
+          .catch((error) => alert(error.message));
+      };
+
+      window.login = function () {
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+        auth.signInWithEmailAndPassword(email, password)
+          .then((userCredential) => {
+            alert("Login successful!");
+            showUser(userCredential.user);
+          })
+          .catch((error) => alert(error.message));
+      };
+
+      window.signInWithGoogle = function () {
+        const provider = new firebase.auth.GoogleAuthProvider();
+        auth.signInWithPopup(provider)
+          .then((result) => {
+            alert("Google login successful!");
+            showUser(result.user);
+          })
+          .catch((error) => alert(error.message));
+      };
+
+      window.signInWithFacebook = function () {
+        const provider = new firebase.auth.FacebookAuthProvider();
+        auth.signInWithPopup(provider)
+          .then((result) => {
+            alert("Facebook login successful!");
+            showUser(result.user);
+          })
+          .catch((error) => alert(error.message));
+      };
+
+      window.logout = function () {
+        auth.signOut().then(() => {
+          document.getElementById("user-info").style.display = "none";
+          alert("Logged out!");
+        });
+      };
+
+      // 👀 Redirect to dashboard if already logged in
+      auth.onAuthStateChanged((user) => {
+        if (user) {
+          showUser(user);
+          // window.location.href = "dashboard.html";
+        }
+      });
+
+      // 📬 Contact form logic
+      const form = document.getElementById("messageForm");
+      const successMsg = document.getElementById("successMsg");
+
+      if (form && successMsg) {
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+          successMsg.style.display = "block";
+          form.reset();
+          setTimeout(() => {
+            successMsg.style.display = "none";
+          }, 4000);
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>

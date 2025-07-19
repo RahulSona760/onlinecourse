@@ -9,24 +9,133 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <!-- Firebase App (core SDK) -->
+<!-- Firebase Scripts (v8) in your <head> -->
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+<!--  Tailwind CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+
+<!-- <script>
+  // =================== Firebase Initialization ===================
+  const firebaseConfig = {
+    apiKey: "AIzaSyAFG23o6CWidoYcaebdVxOf1FoVIc_Icl0",
+    authDomain: "onlinecourseselling.firebaseapp.com",
+    projectId: "onlinecourseselling",
+    storageBucket: "onlinecourseselling.appspot.com",
+    messagingSenderId: "928895642030",
+    appId: "1:928895642030:web:8c3113adedd42f5637c03f",
+    measurementId: "G-X1771QJ9EB"
+  };
+
+  firebase.initializeApp(firebaseConfig);
+
+  // =================== Redirect If Logged In ===================
+  firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+      window.location.href = "dashboard.html";
+    }
+  });
+
+  // =================== Contact Form Submission ===================
+  document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById("messageForm");
+    const successMsg = document.getElementById("successMsg");
+
+    if (form && successMsg) {
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("emailContact").value.trim();
+        const subject = document.getElementById("subject").value.trim();
+        const message = document.getElementById("message").value.trim();
+
+        if (!name || !email || !subject || !message) {
+          alert("Please fill in all fields.");
+          return;
+        }
+
+        successMsg.style.display = "block";
+        form.reset();
+
+        setTimeout(() => {
+          successMsg.style.display = "none";
+        }, 4000);
+      });
+    }
+  });
+
+  // ================== Login Function with Welcome Message ==================
+  function login() {
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value.trim();
+    const errorMsg = document.getElementById("errorMsg");
+
+    if (!email || !password) {
+      if (errorMsg) {
+        errorMsg.textContent = "Please enter both email and password.";
+        errorMsg.style.display = "block";
+      } else {
+        alert("Please enter both email and password.");
+      }
+      return;
+    }
+
+    if (errorMsg) errorMsg.style.display = "none";
+
+    firebase.auth().signInWithEmailAndPassword(email, password)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        const userName = user.displayName || user.email.split("@")[0];
+        showWelcomeMessage(userName);
+      })
+      .catch((error) => {
+        if (errorMsg) {
+          errorMsg.textContent = error.message;
+          errorMsg.style.display = "block";
+        } else {
+          alert("Login failed: " + error.message);
+        }
+      });
+  }
+
+  function showWelcomeMessage(name) {
+    const welcome = document.createElement("p");
+    welcome.classList.add("welcome-msg");
+    welcome.innerText = `Heartly welcome Mr. ${name}`;
+    document.querySelector(".container").appendChild(welcome);
+
+    setTimeout(() => {
+      welcome.remove();
+    }, 5000);
+  }
+</script> -->
+
+
 </head>
 <body>
+    <!--================Nav-bar===================  -->
     <nav>
-        <img src="Black Yellow Minimalist Brain Logo.png" alt="">
+        
+        <img src="Black Yellow Minimalist Brain Logo.png" alt="" class="logo">
         <div class="navigation">
             <ul>
             <i id="menu-close"  class="fa-solid fa-square-xmark"></i>
-            <li><a   class="active" href="index.html">Home</a></li>
+            <li><a class="active" href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="blog.html">Blog</a></li>
             <li><a href="course.html">Courses</a></li>
             <li><a href="contact.html">Contact</a></li>
+           <li><a href="LoginForm.html" class="login-link">Login/SignUp</a></li>
+            <img src="images/login.png" alt="Login Icon" class="nav-icon"  onclick="window.location.href='LoginForm.html';"/>
         </ul> 
         <img id="menu-btn" src="menu.png" alt="">
         </div>
     </nav>
 
-    <!-- home -->
+    <!-- ============home====================== -->
 
     <section id="home">
         <h2>Enhance Your Future With Learning Tech</h2>
@@ -39,7 +148,7 @@
     </div>
     </section>
 
-    <!-- features -->
+    <!--================ features=================== -->
      <section id="features">
     <h1>Awesome Feature</h1>
     <p>Repelinsh man have things gathering lights yielding shall you</p>
@@ -65,7 +174,7 @@
      </section>
 
 
-     <!-- courses -->
+     <!-- ==============courses========= -->
      <section id ="course">
         <h1>Our Popular Courses</h1>
         <p>Repelinsh man have things gathering lights yielding shall you</p>
@@ -79,7 +188,7 @@
            <p>Launch your career in tech with our Web 
             Developer Course, designed to teach you how
              to create beautiful, responsive, and interactive
-              websites from the ground up. No experience? No problem!</p>
+             </p>
            <div class="star">
             <i class="fa-solid fa-star"></i>
             <i class="fa-solid fa-star"></i>
@@ -92,8 +201,17 @@
            <div class="cost">
             $45
            </div>
+<a href="payment.html" class="bg-purple-700 hover:bg-purple-900 text-lg text-white font-semibold py-3 px-6 rounded-full transition duration-300 m-6 my-16 inline-block">
+  Buy Course
+</a>
+
+
+            
         </div>
-        <div    onclick="window.location.href='python.html';"  class="courses">
+ 
+
+
+        <div   onclick="window.location.href='python.html';"  class="courses">
             <img src="images/python.png" alt="">
             <div class="details">
                <span>Updated 21/8/21</span>
@@ -114,6 +232,9 @@
                <div class="cost">
                 $45
                </div>
+              <a href="payment.html" class="bg-purple-700 hover:bg-purple-900 text-lg text-white font-semibold py-3 px-6 rounded-full transition duration-300 m-6  inline-block">
+  Buy Course
+</a>
             </div>
 
         <div  onclick="window.location.href='artificial.html';" class="courses">
@@ -136,6 +257,9 @@
             <div class="cost">
                 $90
             </div>
+           <a href="payment.html" class="bg-purple-700 hover:bg-purple-900 text-lg text-white font-semibold py-3 px-6 rounded-full transition duration-300 m-6  inline-block">
+  Buy Course
+</a>
             </div>
            
 
@@ -164,6 +288,9 @@
            <div class="cost">
             $45
            </div>
+           <a href="payment.html" class="bg-purple-700 hover:bg-purple-900 text-lg text-white font-semibold py-3 px-6 rounded-full transition duration-300 m-6  inline-block">
+  Buy Course
+</a>
         </div>
         <div class="courses">
             <img src="images/cloud-comouting.avif" alt="">
@@ -182,6 +309,9 @@
                <div class="cost">
                 $45
                </div>
+            <a href="payment.html" class="bg-purple-700 hover:bg-purple-900 text-lg text-white font-semibold py-3 px-6 rounded-full transition duration-300 m-6  inline-block">
+  Buy Course
+</a>
             </div>
 
         <div class="courses">
@@ -201,50 +331,30 @@
             <div class="cost">
                 $90
             </div>
+         <a href="payment.html" class="bg-purple-700 hover:bg-purple-900 text-lg text-white font-semibold py-3 px-6 rounded-full transition duration-300 m-6  inline-block">
+  Buy Course
+</a>
             </div>
            </div> 
      </section>
      
 
-     <!-- registration -->
+     <!-- ===================registration================= -->
 
      <section id ="registration">
       <div class="reminder">
-            <p>Get 100 Olinlie Courses for free</p>
-            <h1>Register to get it </h1>
+            <p>Limited Offer: 100 Free Courses</p>
+          <h1>Join Now – Only a Few Spots Left!</h1>
+            <div class="clock-box">
             <div class="clock" id="digitalClock">00:00:00 AM</div>
+            <div class="clock-date" id="clockDate">Day, Month Date</div>
+              <!-- <div class="clock-box"></div> -->
+</div>
+ </section>
 
-            <!-- <div class="time">
-                <div class="date">
-                    18 <br> Days
-                </div>
-                <div class="date">
-                    23 <br> hour
-                </div>
-                <div class="date">
-                    06 <br> minu
-                </div>
-                <div class="date">
-                    58 <br> Secd
-                </div>
-            </div> -->
-        </div>
-<!--  form-creating account   -->
-        <form name="submit-to-google-sheet">
-        <div class="form" >
-            <h3>Create Free Account NOW! </h3>
-           
-            <input type="text" name="name" placeholder="Name ">
-            <input type="email" name="email" placeholder="EmailAddress">
-            <input type="number" name="number" placeholder="Phone Number">
-            <div class="btn">
-            <button type="submit">Submit</button>
-               </div>
-        </div>
-        </form>
-     </section>
 
-<!-- profiles -->
+     
+<!-- =================profiles================== -->
 <section id="experts">
     <h1>Community Experts</h1>
     <p>Replenish man thingh gathering light yellow shall you</p>
@@ -255,9 +365,9 @@
             <h4>Emma Irnik</h4>
             <p>Artificial Intelligence</p>
             <div class="pro-links">
-                <i class="fa-brands fa-instagram"></i>
-                <i class="fa-brands fa-facebook"></i>
-                <i class="fa-brands fa-linkedin"></i>
+                <i class="fa-brands fa-instagram" id="insta"></i>
+                <i class="fa-brands fa-facebook" id="fb"></i>
+                <i class="fa-brands fa-linkedin" id="linkedin"></i>
             </div>
         </div>
 
@@ -266,9 +376,9 @@
             <h4>Jason</h4>
             <p>Data Structure & Algorithim</p>
             <div class="pro-links">
-                <i class="fa-brands fa-instagram"></i>
-                <i class="fa-brands fa-facebook"></i>
-                <i class="fa-brands fa-linkedin"></i>
+                <i class="fa-brands fa-instagram"id="insta"></i>
+                <i class="fa-brands fa-facebook"id="fb"></i>
+                <i class="fa-brands fa-linkedin"id="linkedin"></i>
             </div>
         </div>
 
@@ -277,9 +387,9 @@
             <h4>Maalik</h4>
             <p>Cloud-Computing</p>
             <div class="pro-links">
-                <i class="fa-brands fa-instagram"></i>
-                <i class="fa-brands fa-facebook"></i>
-                <i class="fa-brands fa-linkedin"></i>
+                <i class="fa-brands fa-instagram"id="insta"></i>
+                <i class="fa-brands fa-facebook" id="fb"></i>
+                <i class="fa-brands fa-linkedin"id="linkedin"></i>
             </div>
         </div>
 
@@ -288,15 +398,23 @@
             <h4>Mathew</h4>
             <p>Full-Stack Developer</p>
             <div class="pro-links">
-                <i class="fa-brands fa-instagram"></i>
-                <i class="fa-brands fa-facebook"></i>
-                <i class="fa-brands fa-linkedin"></i>
+                <i class="fa-brands fa-instagram" id="insta"></i>
+                <i class="fa-brands fa-facebook"id="fb"></i>
+                <i class="fa-brands fa-linkedin"id="linkedin"></i>
             </div>
         </div>
     </div>
 </section>
-<!-- </section> -->
+
+
+<!-- =======================Footer-section>==================== -->
      <footer >
+
+         <div class="pro-links">
+            <i class="fa-brands fa-instagram" id="insta"></i>
+            <i class="fa-brands fa-facebook" id="fb"></i>
+            <i class="fa-brands fa-linkedin" id="linkedin"></i>
+        </div>
     <div class="footer-col">
         <h3>Top Product </h3>
         <li>Manage Reputation</li>
@@ -336,24 +454,14 @@
 
     <div class="copyright">
         <p>Copyright 2021 All right reserverd | This templates is made by TechEdu</p>
-        <div class="pro-links">
-            <i class="fa-brands fa-instagram"></i>
-            <i class="fa-brands fa-facebook"></i>
-            <i class="fa-brands fa-linkedin"></i>
-        </div>
+       
     </div>
      </footer>
 
 
-<!-- footer Form -->
-<form >
-  <input name="email" type="email" placeholder="Email" required>
-  <button type="submit">Send</button>
-</form>
-
-
-<!-- Scroll reveal functionality -->
+<!-- ======================Scroll reveal functionality============== -->
 <script src="https://unpkg.com/scrollreveal"></script>
+<!-- ==================Script MenuBtn================= -->
 <script>
     $('#menu-btn').click(function(){
         $('nav .navigation ul') .addClass('active')
@@ -377,7 +485,31 @@ sr.reveal('.left-contact',{origin:'left'});
 sr.reveal('.right-contact',{origin:'right'});
 sr.reveal('.end-section',{origin:'top'});
 </script>
- 
+
+<!--================= RazorPay================ -->
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script>
+document.getElementById("buyBtn").addEventListener("click", function (e) {
+  e.preventDefault(); // ✅ Prevent page reload
+
+  const options = {
+    key: "rzp_test_YourKeyHere", // Replace with your Razorpay Key ID
+    amount: 9000, // 90 INR in paise
+    currency: "INR",
+    name: "Online Course",
+    description: "C++ Course",
+    handler: function (response) {
+      alert("Payment successful! ID: " + response.razorpay_payment_id);
+    },
+    theme: {
+      color: "#6b46c1"
+    }
+  };
+
+  const rzp = new Razorpay(options);
+  rzp.open();
+});
+</script>
 <script src="app.js"></script>
 <script src="clock.js"></script>
 </body>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/10.3.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.3.1/firebase-auth.js"></script>
+
+  <!-- Firebase Config -->
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyAFG23o6CWidoYcaebdVxOf1FoVIc_Icl0",
+      authDomain: "onlinecourseselling.firebaseapp.com",
+      projectId: "onlinecourseselling",
+      storageBucket: "onlinecourseselling.firebasestorage.app",
+      messagingSenderId: "928895642030",
+      appId: "1:928895642030:web:8c3113adedd42f5637c03f",
+      measurementId: "G-X1771QJ9EB"
+    };
+    firebase.initializeApp(firebaseConfig);
+  </script>
+</head>
+
+<body>
+  <div class="dashboard-container">
+    <h1>Welcome to Your Dashboard</h1>
+
+    <div class="user-info" id="user-info" style="display: none;">
+      <img id="user-pic" src="" alt="Profile Picture" width="100" height="100" />
+      <p id="user-name"></p>
+      <p id="user-email"></p>
+      <button onclick="logout()">Logout</button>
+    </div>
+  </div>
+
+  <script>
+    const auth = firebase.auth();
+
+    // Redirect if not logged in
+    auth.onAuthStateChanged((user) => {
+      if (user) {
+        // Show user info
+        document.getElementById("user-info").style.display = "block";
+        document.getElementById("user-pic").src = user.photoURL || "https://via.placeholder.com/100";
+        document.getElementById("user-name").innerText = "👋 Hello, " + (user.displayName || "User");
+        document.getElementById("user-email").innerText = "📧 " + user.email;
+      } else {
+        // Not logged in → go to login page
+        window.location.href = "contactForm.html";
+      }
+    });
+
+    function logout() {
+      auth.signOut().then(() => {
+        window.location.href = "contactForm.html";
+      });
+    }
+  </script>
+</body>
+</html>

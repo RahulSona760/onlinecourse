@@ -11,6 +11,7 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 </head>
 <body>
+    <!-- =============================nav-Bar========================= -->
     <nav>
         <img src="Black Yellow Minimalist Brain Logo.png" alt="">
         <div class="navigation">
@@ -21,10 +22,14 @@
             <li><a  class="active" href="blog.html">Blog</a></li>
             <li><a href="course.html">Courses</a></li>
             <li><a href="contact.html">Contact</a></li>
+                     <li><a href="LoginForm.html" class="login-link">Login/SignUp</a></li>
+            <img src="images/login.png" alt="Login Icon" class="nav-icon"  onclick="window.location.href='LoginForm.html';"/>
         </ul> 
         <img id="menu-btn" src="menu.png" alt="">
         </div>
     </nav>
+
+    <!--========================== Blog-Section=========================== -->
 <section id="blog-container">
     <div class="blogpost">
         <div class="post">
@@ -61,11 +66,7 @@
 
 
 
-    
-     
-
-
-
+<!-- ====================footer-Sectio===================== -->
 
 <footer >
     <div class="footer-col">
@@ -115,7 +116,7 @@
     </div>
 </footer>
 
-
+<!-- ================Script MenuBtn======================== -->
 <script>
     $('#menu-btn').click(function(){
         $('nav .navigation ul') .addClass('active')

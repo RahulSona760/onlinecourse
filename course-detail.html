@@ -11,6 +11,7 @@
    
 </head>
 <body>
+    <!-- =================Nav-Bar=============== -->
     <nav>
         <img src="Black Yellow Minimalist Brain Logo.png" alt="">
         <div class="navigation">
@@ -21,19 +22,22 @@
             <li><a href="blog.html">Blog</a></li>
             <li><a class="active"href="course.html">Courses</a></li>
             <li><a href="contact.html">Contact</a></li>
+            
+           <li><a href="LoginForm.html" class="login-link">Login/SignUp</a></li>
+                <img src="images/login.png" alt="Login Icon" class="nav-icon"  onclick="window.location.href='LoginForm.html';"/>
         </ul> 
         <img id="menu-btn" src="menu.png" alt="">
         </div>
     </nav>
 
-    <!-- home -->
+    <!--================== home================ -->
 
     <section id="about-home">
         <h2>Enroll Our Popular Course And SkilUp</h2>
     
     </section>
 
-
+<!-- =================Course-Details================= -->
  <section id="course-inner">
     <div class="overview">
         <img class="course-img"  src="c1.jpg" alt="">
@@ -112,17 +116,7 @@
     </div>
  </section>
 
-
-
-
-
-
-
-
-
-
-
-   
+ <!-- =======================Footer_section===================== -->
      <footer >
         <div class="footer-col">
             <h3>Top Product </h3>
@@ -171,7 +165,7 @@
         </div>
     </footer>
     
-    
+    <!-- =======================Script  MenuBtn================= -->
     <script>
         $('#menu-btn').click(function(){
             $('nav .navigation ul') .addClass('active')

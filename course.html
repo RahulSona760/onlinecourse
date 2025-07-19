@@ -8,9 +8,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-   
+   <!--  Tailwind CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
+    <!-- =============nav_Bar============== -->
     <nav>
         <img src="Black Yellow Minimalist Brain Logo.png" alt="">
         <div class="navigation">
@@ -21,23 +23,28 @@
             <li><a href="blog.html">Blog</a></li>
             <li><a class="active"href="course.html">Courses</a></li>
             <li><a href="contact.html">Contact</a></li>
+            <li><a href="LoginForm.html" class="login-link">Login/SignUp</a></li>
+            <img src="images/login.png" alt="Login Icon" class="nav-icon"  onclick="window.location.href='LoginForm.html';"/>
+         
         </ul> 
         <img id="menu-btn" src="menu.png" alt="">
         </div>
     </nav>
 
-    <!-- home -->
+    <!--============== home============== -->
 
     <section id="about-home">
-        <h2>Courses/</h2>
+       <h2 >
+  Level-Up Your Skills With Our Best Courses
+</h2>
     
     </section>
 
 
-     <!-- courses -->
+     <!-- ============courses============ -->
      <section id ="course">
-        <h1>Our Popular Courses</h1>
-        <p>Repelinsh man have things gathering lights yielding shall you</p>
+        <h1 class="text-xl font-bold text-center text-gray-500 mb-6">Our Popular Courses</h1>
+        <p >Repelinsh man have things gathering lights yielding shall you</p>
     <div class="courses-box">
 
         <div onclick="window.location.href='course-detail.html';" class="courses">
@@ -58,6 +65,9 @@
            <div class="cost">
             $45
            </div>
+           <a href="payment.html" class="bg-purple-700 hover:bg-purple-900 text-lg text-white font-semibold py-3 px-6 rounded-full transition duration-300 m-6 my-16 inline-block">
+  Buy Course
+</a>
         </div>
         <div onclick="window.location.href='python.html';"  class="courses">
             <img src="c1.jpg" alt="">
@@ -79,8 +89,11 @@
                 </div>
                </div>
                <div class="cost">
-                $45
+                <b>$45</b>
                </div>
+               <a href="payment.html" class="bg-purple-700 hover:bg-purple-900 text-lg text-white font-semibold py-3 px-6 rounded-full transition duration-300 m-6 my-16 inline-block">
+  Buy Course
+</a>
             </div>
 
         <div onclick="window.location.href='artificial.html';" class="courses">
@@ -101,6 +114,9 @@
             <div class="cost">
                 $90
             </div>
+            <a href="payment.html" class="bg-purple-700 hover:bg-purple-900 text-lg text-white font-semibold py-3 px-6 rounded-full transition duration-300 m-6 my-16 inline-block">
+  Buy Course
+</a>
             </div>
              </div>
 
@@ -123,6 +139,9 @@
            <div class="cost">
             $45
            </div>
+           <a href="payment.html" class="bg-purple-700 hover:bg-purple-900 text-lg text-white font-semibold py-3 px-6 rounded-full transition duration-300 m-6 my-16 inline-block">
+  Buy Course
+</a>
         </div>
         <div class="courses">
             <img src="images/cloud-comouting.avif" alt="">
@@ -142,6 +161,9 @@
                <div class="cost">
                 $45
                </div>
+               <a href="payment.html" class="bg-purple-700 hover:bg-purple-900 text-lg text-white font-semibold py-3 px-6 rounded-full transition duration-300 m-6 my-16 inline-block">
+  Buy Course
+</a>
             </div>
 
         <div class="courses">
@@ -160,8 +182,11 @@
             </div>
             </div>
             <div class="cost">
-                $90
+                $99
             </div>
+            <a href="payment.html" class="bg-purple-700 hover:bg-purple-900 text-lg text-white font-semibold py-3 px-6 rounded-full transition duration-300 m-6 my-16 inline-block">
+  Buy Course
+</a>
             </div>
            </div> 
            <div class="courses-box">
@@ -180,8 +205,11 @@
                  </div>
                 </div>
                 <div class="cost">
-                 $45
+                 $49
                 </div>
+                <a href="payment.html" class="bg-purple-700 hover:bg-purple-900 text-lg text-white font-semibold py-3 px-6 rounded-full transition duration-300 m-6 my-16 inline-block">
+  Buy Course
+</a>
              </div>
              <div class="courses">
                  <img src="images/js.avif" alt="">
@@ -198,8 +226,11 @@
                      </div>
                     </div>
                     <div class="cost">
-                     $45
+                     $69
                     </div>
+                    <a href="payment.html" class="bg-purple-700 hover:bg-purple-900 text-lg text-white font-semibold py-3 px-6 rounded-full transition duration-300 m-6 my-16 inline-block">
+  Buy Course
+</a>
                  </div>
      
              <div class="courses">
@@ -217,25 +248,21 @@
                  </div>
                  </div>
                  <div class="cost">
-                     $90
+                     $59
                  </div>
+                 <a href="payment.html" class="bg-purple-700 hover:bg-purple-900 text-lg text-white font-semibold py-3 px-6 rounded-full transition duration-300 m-6 my-16 inline-block">
+  Buy Course
+</a>
                  </div>
                 </div> 
      </section>
 
-
-
-
-
-
-
-
-
-
-
-
-   
-     <footer >
+   <footer >
+        <div class="pro-links">
+            <i class="fa-brands fa-instagram" id="insta"></i>
+            <i class="fa-brands fa-facebook" id="fb"></i>
+            <i class="fa-brands fa-linkedin" id="linkedin"></i>
+        </div>
         <div class="footer-col">
             <h3>Top Product </h3>
             <li>Manage Reputation</li>
@@ -275,11 +302,7 @@
     
         <div class="copyright">
             <p>Copyright 2021 All right reserverd | This templates is made by TechEdu</p>
-            <div class="pro-links">
-                <i class="fa-brands fa-instagram"></i>
-                <i class="fa-brands fa-facebook"></i>
-                <i class="fa-brands fa-linkedin"></i>
-            </div>
+           
         </div>
     </footer>
     

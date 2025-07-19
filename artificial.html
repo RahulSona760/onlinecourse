@@ -11,6 +11,7 @@
    
 </head>
 <body>
+    <!--=================Nav-Bar==================  -->
     <nav>
         <img src="Black Yellow Minimalist Brain Logo.png" alt="">
         <div class="navigation">
@@ -21,25 +22,28 @@
             <li><a href="blog.html">Blog</a></li>
             <li><a class="active"href="course.html">Courses</a></li>
             <li><a href="contact.html">Contact</a></li>
+           
+           <li><a href="LoginForm.html" class="login-link">Login/SignUp</a></li>
+                <img src="images/login.png" alt="Login Icon" class="nav-icon"  onclick="window.location.href='LoginForm.html';"/>
         </ul> 
         <img id="menu-btn" src="menu.png" alt="">
         </div>
     </nav>
 
-    <!-- home -->
+    <!-- =================home====================== -->
 
     <section id="about-home">
         <h2>Enroll Our Popular Course And SkilUp</h2>
     
     </section>
-
+<!-- ==============Course-Detail=================== -->
 
  <section id="course-inner">
     <div class="overview">
         <img class="course-img"  src="c1.jpg" alt="">
       <div class="course-head">
      <div class="c-name">
-        <h2>Javascript Beginner Course </h2>
+        <h2>"Artificial Intelligence"</h2>
         <div class="star">
         <i class="fa-solid fa-star"></i>
         <i class="fa-solid fa-star"></i>
@@ -57,7 +61,7 @@
             <img src="images/c4.jpg" alt="">
             <div class="tutor-det">
                 <h5>John Doe</h5>
-                <p>Python Debeloper At Google</p>
+                <p><b>Python Developer At Google</b></p>
             </div>
         </div>
         <hr>
@@ -121,17 +125,7 @@
     </div>
  </section>
 
-
-
-
-
-
-
-
-
-
-
-   <!-- footer-section -->
+<!-- ==============Footer-section============ -->
      <footer >
         <div class="footer-col">
             <h3>Top Product </h3>
@@ -180,7 +174,7 @@
         </div>
     </footer>
     
-    
+      <!-- =======================Script  MenuBtn================= -->
     <script>
         $('#menu-btn').click(function(){
             $('nav .navigation ul') .addClass('active')
