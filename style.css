@@ -7,7 +7,9 @@
 }
 body{
      line-height: 1.6;
-    font-family: "Poppins", sans-serif;
+  font-family: Arial, sans-serif;
+font-family: Arial, sans-serif;
+
     background:#D8B7DD;
     color: #333;
     
@@ -15,9 +17,11 @@ body{
      
 }
 h1{
-    font-size:2.5rem;
-    font-weight: 700;
-    color:rgb(35,35,85);
+    font-size:24px;
+    font-family: Arial, sans-serif;
+
+    /* font-weight: 700;
+    color:rgb(35,35,85); */
 }
 span{
     font-size: .9rem;
@@ -47,32 +51,32 @@ nav {
     z-index: 999;
     
 }
-nav img {
+/* nav img {
     width: 150px;
     cursor: pointer;
-}
+} */
 
 nav .navigation ul{
     list-style: none;
      display: flex;
      /* justify-content: flex-end;
      align-items: center; */
-     gap: 20px;
+     gap: 10px;
 
 }
 nav .navigation {
     display: flex;
 }
 nav .navigation ul li{
-    margin-left: 50px;
+    margin-left: 30px;
     list-style: none;
     text-decoration: none;
     
 }
 nav .navigation ul li a{
     text-decoration: none;
-    color: #00FFFF;
-    font-size: 40px;
+    color: #fff;
+    font-size: 13px;
     font-weight: 600;
     transition: 0.2s ease;
 }
@@ -92,8 +96,8 @@ nav .navigation ul li a:hover{
 }
 
 .nav-icon {
-  width: 90px;
-  height: 90px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   margin-right: 8px;
   cursor: pointer;
@@ -125,8 +129,8 @@ nav .navigation ul li a:hover{
 }
 
 nav img {
-  height: 120px;
-  width: 120px;
+  height: 40px;
+  width: 40px;
   border-radius: 50%;
   object-fit: contain;
   /* border-radius: 50%; */
@@ -151,7 +155,7 @@ nav img {
   margin-top: 90px; /* Pushes form below navbar */
 }
 
-/* home */
+/* ====================home========================== */
 #home{
 background-image: linear-gradient(rgba(9,5,54,0.3),rgba(5, 4, 46, 0.7)), url("back.jpg");
 width: 100%;
@@ -168,12 +172,12 @@ padding: 40px;
 #home h2{
     color:#fff;
 
-    font-size: 3rem;
+    font-size: 2rem;
     letter-spacing: 1px;
 }
 #home p{
     color:#fff;
-    font-size: 1.5rem;
+    font-size: 1rem;
     width: 50%;
     line-height: 25px;
 
@@ -189,9 +193,9 @@ padding: 40px;
 
 #home a {
 text-decoration: none;
-font-size: 1.5rem;
-font-weight: 600;
-padding: 13px 35px;
+font-size: 1rem;
+font-weight: 400;
+padding: 5px 15px;
 background-color: #fff;
 border-radius: 5px;
 
@@ -223,19 +227,19 @@ featuere */
 
 
 #features{
-    padding: 80px 20px;
+    padding: 40px 10px;
     text-align: center;
     /* font-size: 3rem; */
 }
 #features h1{
-    font-size: 2.5rem;
+    font-size: 2rem;
     margin-bottom: 10px;
     columns: #29303B;
 }
 #features p{
-    font-size: 3rem;
+    font-size: 2rem;
     columns: #555;
-    max-width: 700px;
+    max-width: 400px;
     margin: 0 auto;
 }
 #features .fea-base{
@@ -249,7 +253,7 @@ featuere */
 #features .fea-box{
 background: #F9F9FF;
 text-align: start;
-padding: 30px 20px;
+padding: 20px 10px;
 border-radius: 8px;
 box-shadow: 0 5px 10px rgba(0,0,0,0,0.005);
 transition: transform 0.3s ease;
@@ -259,15 +263,15 @@ transition: transform 0.3s ease;
 }
 
 #features .fea-box i {
-    font-size: 2.5rem;
+    font-size: 2rem;
     color: rgb(44, 4, 80);
     margin-bottom: 10px;
 }
 
 #features .fea-box h3{
-    font-size: 1.3rem;
+    font-size: 1rem;
     color: #2E2E3B;
-    font-weight: 600;
+    font-weight: 400;
     margin-bottom: 10px;
 }
 #features .fea-box p{
@@ -288,13 +292,13 @@ transition: transform 0.3s ease;
 }
 #course h1{
      text-align: center;
-    font-size: 3rem;
-    margin-bottom: 10px;
+    font-size: 2rem;
+    margin-bottom: 4px;
 }
 #course p{
-    font-size: 3rem;
+    font-size: 1.5rem;
     text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
   color: #666;
 }
 #course .courses-box{
@@ -305,7 +309,7 @@ transition: transform 0.3s ease;
     /* grid-template-columns: repeat(auto-fit, minmax(228px,1fr)); */
     gap:20px;
     padding: 0 20px;
-    margin-bottom:50px;
+    margin-bottom:40px;
     
   
 }
@@ -330,7 +334,7 @@ transition: transform 0.3s ease;
 
 #course .courses img{
     width:100%;
-    height:60%;
+    height:50%;
     object-fit: cover;
     background-size: cover;
     background-position: center;
@@ -343,23 +347,23 @@ transition: transform 0.3s ease;
 }
 
 #course .courses .details {
-    margin-top : 15px;
+    margin-top : 7px;
 }
 #course .courses .details h1{
-    font-size: 1.3rem;
-    margin: 10px 0;
+    font-size: 1rem;
+    margin: 5px 0;
 }
 #course .courses .details p{
-    font-size: 1rem;
+    font-size: 0.9rem;
     color: #444;
 }
 #course .courses .details i{
     color: #f39c12;
-    font-size: 2rem;
-    margin-top: 10px;
+    font-size: 1rem;
+    margin-top: 2px;
 }
  #course .courses .details span{
-    font-size: 1rem;
+    font-size: 0.7rem;
     color: #888;
 } 
 /* #course .courses .details h1{
@@ -380,19 +384,19 @@ transition: transform 0.3s ease;
    right: 15px;
    bottom: 100px;
 }
-.buy-btn {
+#course .courses .buy-btn {
   display: inline-block;
   background-color: #8000ff;  /* Purple */
   color: white;
-  padding: 12px 20px;
+  padding: 5px 8px;
   text-align: center;
   border-radius: 10px;
   font-weight: bold;
   text-decoration: none;
-  font-size: 16px;
+  font-size: 14px;
   transition: background 0.3s ease;
-  margin-top: 10px;
-  width: 100%;
+  /* margin-top: 10px; */
+  width: 50%;
 }
 
 .buy-btn:hover {
@@ -421,12 +425,12 @@ transition: transform 0.3s ease;
 
 #registration .reminder h1 {
     color:red;
-    font-size: 80px;
-    margin-bottom: 20px;
+    font-size: 35px;
+    margin-bottom: 10px;
 }
 
 #registration .reminder p {
-    font-size: 60px;
+    font-size: 25px;
     color:green;
     font-weight: bold;
 }
@@ -434,14 +438,14 @@ transition: transform 0.3s ease;
 .clock-box {
   display: flex;
   align-items: center;
-  gap: 15px; /* Space between time and date */
+  gap: 10px; /* Space between time and date */
   background-color: #1e1e1e;
   color: #ccc;
-  padding: 15px 25px;
-  border-radius: 10px;
+  padding: 7px 10px;
+  border-radius: 5px;
 
  
-  border: 5px solid white; 
+  border: 4px solid white; 
    box-shadow: 2px 2px  30px 20px green; 
   width: fit-content;
   margin: auto;
@@ -454,13 +458,13 @@ transition: transform 0.3s ease;
 
      .clock {
       /* background-color: #222; */
-      height: 150px;
+      height: 100px;
       width: fit-content;
       color: #fff;
       padding: 20px 30px ;
-      padding-top: 40px;
-      border-radius: 12px;
-      font-size: 4rem;
+      padding-top: 25px;
+      border-radius: 10px;
+      font-size: 2rem;
        margin: auto;
   text-align: center;
    /* border: 5px solid white; */
@@ -468,7 +472,7 @@ transition: transform 0.3s ease;
    
     } 
 .clock-date {
-  font-size: 50px;
+  font-size: 30px;
   color: #fff;
   margin-top: 10px;
   transition: font-size 0.3s ease;
@@ -485,57 +489,61 @@ transition: transform 0.3s ease;
 /*==========================
  Expert-Section ========================*/
 #experts{
+  background-color:#fff;
     padding: 8vw 8vw 8vw 8vw;
     text-align: center;
     border: 5px solid white;
     box-shadow: 2px 2px  30px 20px white;
     gap: 20px;
+    width: 100%;
     
 }
 #experts h1{
-    font-size: 5rem;
+    font-size: 2rem;
+    color: #555;
 }
 #experts p{
-    font-size: 3rem;
+    font-size: 1.5rem;
+    color: #555;
 }
 #experts .expert-box{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px,1fr));
     grid-gap:1rem;
-    gap: 50px;
-    margin-top:50px;
+    gap: 20px;
+    margin-top:03px;
     border-radius: 10px;
-    border: 15px solid transparent;
+    border: 5px solid transparent;
 
-    box-shadow: 2px 2px  30px 20px rebeccapurple;
+    
 }
 #experts .expert-box .profile{
     background: #fafaf1;
-    padding: 30px 10px;
-     border: 5px solid white;
+    padding: 20px 7px;
+     border: 3px solid white;
   border-radius: 10px;
-    box-shadow: 2px 2px  30px 20px lightblue;
+    box-shadow: 1px 2px  20px 10px lightblue;
 }
 
 
 #experts .expert-box .profile h4{
-    font-size: 3rem;
+    font-size: 1rem;
     padding-top: 20px;
 }
 .pro-links{
-    margin-top: 10px;
-    border-radius: 5px;
+    margin-top: 7px;
+    border-radius: 3px;
     transition: 0.3s;
    
 
 
 }
 .pro-links i {
-    padding: 10px 13px;
+    padding: 8px 10px;
     border: 1px solid black ;
     cursor: pointer;
     transition: 0.3 ease;
-    margin: 5px;
+    margin: 4px;
  
    
 }
@@ -549,8 +557,8 @@ transition: transform 0.3s ease;
     margin: 5px;
 }
 #experts .profile img{
-    height: 350px;
-    width: 350px;
+    height: 120px;
+    width: 120px;
     border-radius: 50%;
     transition:  all ease .30s;
     box-shadow: 0 8px 32px 0 rgba(31,38,135,37);
@@ -574,24 +582,24 @@ footer{
   padding: 20px;
   background-color: #333;
   color: #fff;
-  margin-top: 40px;
+  margin-top: 30px;
 }
 footer .footer-col{
-    padding-bottom: 40px;
-    line-height: 55px;
+    padding-bottom: 30px;
+    line-height: 40px;
    
 }
 footer h3{
-    font-size: 50px;
+    font-size: 30px;
     color: rgb(241, 240, 245);
-    font-weight: 600;
-    padding-bottom: 20px;
+    font-weight: 400;
+    padding-bottom: 10px;
 }
 footer li{
     list-style: none;
     color: #7b838a;
     padding: 10px 0;
-    font-size: 40px;
+    font-size: 20px;
     cursor: pointer;
     transition: 0.2 ease;
 }
@@ -605,30 +613,30 @@ footer p{
  
 }
 footer .subscribe{
-    margin-top: 20px;
+    margin-top: 10px;
    
 }
 footer input{
-    width: 270px;
-    padding: 30px 30px;
+    width: 230px;
+    padding: 20px 10px;
     background: #334F6C;
     border: none;
     outline: none;
     color: #fff;
-    border-radius: 5px;
+    border-radius: 3px;
 }
 
 footer input::placeholder{
-    font-size: 1.5rem;
+    font-size: 1rem;
     color: #fafaf1;
 }
 footer .subscribe a {
     text-decoration: none;
-font-size: 1.5rem;
-font-weight: 600;
-padding: 13px 15px;
+font-size: 1rem;
+font-weight: 300;
+padding: 10px 10px;
 background-color: #fff;
-border-radius: 5px;
+border-radius: 3px;
 }
 footer .subscribe a.yellow{
     color: #fff;
@@ -669,11 +677,10 @@ footer .subscribe a.yellow:hover {
 footer .copyright p{
     margin-top: 100px;
     color: #fff;
-    font-size: 1rem;
+    font-size: 0.8rem;
 }
 
-/* =============================
-   About-Setion =================== */
+/* =============================About-Setion =================== */
 #about-home{
     background-image: linear-gradient(rgba(9,5,54,0.3),rgba(5, 4, 46, 0.7)),
      url("images/back1.jpg");
@@ -690,8 +697,8 @@ footer .copyright p{
     }
     #about-home h2{
         color: #fff;
-        font-size: 4rem;
-        letter-spacing: 1px;
+        font-size: 2rem;
+        letter-spacing: 0.8px;
     }
 
 
@@ -756,9 +763,9 @@ footer .copyright p{
     font-weight: 300;
   }
   #about-container .about-text .about-fe .fe-text h5{
-    font-size: 16px;
+    font-size: 13px;
     color: #29303B;
-    font-size: 2rem;
+    
   }
 #about-container .about-fe:hover {
   transform: translateY(-5px);
@@ -775,7 +782,7 @@ footer .copyright p{
 
 }
 #trust h1{
-    font-size: 2.5rem;
+    font-size: 2rem;
     margin-bottom: 10px;
     color: #29303B;
     text-align: center;
@@ -810,8 +817,7 @@ gap: 20px;
   transform: scale(1.1);
 }
 
-/* =================Blog-Setion
-============================ */
+/* =================Blog-Setion============================ */
 #blog-container{
     display: flex;
     justify-content: space-between;
@@ -840,17 +846,17 @@ gap: 20px;
 #blog-container .blogs .post p{
     color:#101c32;
     padding-bottom:20px;
-    font-size: 1rem;
+    font-size: 0.7rem;
 }
 
 #blog-container .blogs .post a{
     text-decoration: none;
     color: #fff;
-font-size: 1.5rem;
-font-weight: 600;
-padding: 13px 35px;
+font-size: 1rem;
+font-weight: 400;
+padding: 9px 30px;
 background-color: rgb(21,21,100);
-border-radius: 5px;
+border-radius: 3px;
 
 }
 #blog-container .blogs .post a:hover{
@@ -858,16 +864,16 @@ color: #101c32;
 background-color: #fff;
 }
 #blog-container .cate h2{
-padding-bottom:7px ;
-font-size: 3rem;
+padding-bottom:5px ;
+font-size: 2rem;
 
 }
 #blog-container .cate a{
     text-decoration: none;
     color: #757373;
-    font-weight: 500;
-    line-height: 75px;
-    font-size: 30px;
+    font-weight: 400;
+    line-height: 60px;
+    font-size: 20px;
 }
 #blog-container .blogpost{
     width: 60%;
@@ -876,10 +882,10 @@ font-size: 3rem;
 #blog-container .blogpost p{
     text-align: justify;
     padding-bottom: 60px !important;
-    font-size: 2rem;
+    font-size: 1rem;
 }
 #blog-container .blogpost h2{
-    font-size: 3rem;
+    font-size: 2rem;
     padding-top: 2px;
 }
 
@@ -887,11 +893,11 @@ font-size: 3rem;
 #blog-container .blogpost a{
     text-decoration: none;
     color: #fff;
-font-size: 1.5rem;
-font-weight: 600;
-padding: 13px 35px;
+font-size: 1rem;
+font-weight: 300;
+padding: 8px 30px;
 background-color: rgb(21,21,100);
-border-radius: 5px;
+border-radius: 3px;
 
 }
 #blog-container .blogpost  a:hover{
@@ -918,8 +924,8 @@ padding: 8vw;
     width: 100%;
     height: 60vh;
     object-fit: cover;
-    border-radius: 20px;
-    margin-bottom: 20px;
+    border-radius: 10px;
+    margin-bottom: 10px;
 }
 
 #course-inner .overview .course-head{
@@ -929,53 +935,53 @@ padding: 8vw;
     
 }
 #course-inner .overview p{
-    font-size: 28px;
-    font-weight: 600;
-    line-height: 35px;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 20px;
     color: black;
     background-color: #FED2E2;
-    border-radius: 5px;
+    border-radius: 3px;
 }
 
 #course-inner .overview .course-head .c-name{
     width: 70% ;
 }
 #course-inner .course-head .course-head .c-name p{
-    font-size: 30px;
+    font-size: 20px;
 }
 #course-inner .overview .course-head h2{
     color: #101c32;
 }
 #course-inner .overview .course-head .star{
-    margin: 6px 0;
+    margin: 4px 0;
 
 }
 #course-inner .overview .course-head .star i{
     color: yellow;
-    font-size: 1rem;
+    font-size: 0.8rem;
    
 }
 #course-inner .overview .course-head .c-name p{
-    font-size: 1rem;
+    font-size: 0.8rem;
 }
 #course-inner .overview .course-head  span{
-    padding: 16px 22px ;
+    padding: 15px 22px ;
     border-radius: 2px;
     color: #101c32;
-    font-size:24px;
-    font-weight: 700;
+    font-size:15px;
+    font-weight: 300;
     background: rgba(88,56,252,0.1);
 }
 #course-inner .learn p{
-    font-size: 28px;
-    font-weight: 500;
-    padding-bottom: 15px;
+    font-size: 15px;
+    font-weight: 300;
+    padding-bottom: 8px;
     color: black;
 }
 #course-inner .learn p i{
     color: #654ce4;
-    font-weight: 700;
-    margin-right: 20px;
+    font-weight: 300;
+    margin-right: 15px;
 }
 #course-inner .tutor {
     display: flex;
@@ -991,14 +997,14 @@ padding: 8vw;
 
 
 #course-inner .tutor h5{
-    font-size: 15px;
-    font-weight: 500;
+    font-size: 10px;
+    font-weight: 300;
 }
 
 #course-inner h3{
-    padding: 35px 0 25px 0;
+    padding: 30px 0 20px 0;
     color: #29303b;
-    font-weight: 800;
+    font-weight: 500;
 }
 
 
@@ -1010,7 +1016,7 @@ padding: 8vw;
 #course-inner  hr{
     height: 1px;
     background: rgba(236,226,229,0.5 green, blue, alpha);
-    margin-top: 40px;
+    margin-top: 30px;
 }
 
 
@@ -1062,7 +1068,7 @@ box-shadow: 0 20px 40px 0 rgb(11 2 55/8%);
 /* ====================================
     =Contact-Section================================= */
 #contact{
-    padding: 40px 20px;
+    padding: 30px 15px;
     display: flex;
     flex-wrap: wrap;
    gap: 30px;
@@ -1073,21 +1079,21 @@ box-shadow: 0 20px 40px 0 rgb(11 2 55/8%);
     flex: 1;
     box-shadow: 0 20px 25px 20px white;
    background: #d1b2db;
-  padding: 30px;
-  border-radius: 10px;
+  padding: 20px;
+  border-radius: 7px;
   font-family: 'Segoe UI', sans-serif;
   color: #000;
 }
 #contact .getin:hover{
     transform: translateY(-10px);
   transition: transform 0.5s linear;
-   border:5px solid skyblue;
+   border:4px solid skyblue;
 
 }
 #contact .getin h2{
     color:#2c234d;
-    font-size: 30px;
-    font-weight: 800px;
+    font-size: 20px;
+    font-weight: 500px;
    
 }
 #contact div h1{
@@ -1102,19 +1108,19 @@ box-shadow: 0 20px 40px 0 rgb(11 2 55/8%);
 }
 #contact .getin h3{
     color:#2c234d;
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 26px;
-    padding-bottom: 25px;
-    margin-bottom: 15px;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 23px;
+    padding-bottom: 22px;
+    margin-bottom: 13px;
     
 }
 #contact .getin  .getin-detalis div{
     display: flex;
 }
 #contact .getin  .getin-detalis div .get{
-    font-size: 16px;
-    line-height: 22px;
+    font-size: 13px;
+    line-height: 18px;
     color:#654ce4 ;
     margin-right: 20px;
 }
@@ -1126,9 +1132,10 @@ box-shadow: 0 20px 40px 0 rgb(11 2 55/8%);
 #contact .form {
   flex: 2;
   background: #ffe9dc;
-  padding: 30px;
-  border: 5px solid plum;
-  border-radius: 10px;
+  padding: 17px;
+  border: 3px solid  #8000ff;  ;
+  
+  border-radius: 8px;
   color: #000;
   font-family: 'Segoe UI', sans-serif;
   /* transition: all ease-in-out; */
@@ -1137,11 +1144,11 @@ box-shadow: 0 20px 40px 0 rgb(11 2 55/8%);
     
      transform: translateY(-10px);
   transition: transform 0.5s linear;
-  border:5px solid purple;
+  border:3px solid  #8000ff;  
 }
 
 #contact .form h4{
-    font-size: 30px;
+    font-size: 15px;
     color:#60B5FF;
     line-height: 30px;
     margin-bottom: 8px;
@@ -1149,9 +1156,9 @@ box-shadow: 0 20px 40px 0 rgb(11 2 55/8%);
 }
 #contact .form  p{
     color:#C62E2E;
-    line-height: 28px;
-    padding-bottom: 25px;
-    font-size: 25px
+    line-height: 20px;
+    padding-bottom: 20px;
+    font-size: 15px
    
    
 }
@@ -1162,20 +1169,30 @@ box-shadow: 0 20px 40px 0 rgb(11 2 55/8%);
 }
 #contact .form .form-row input{
     width: 48%;
-    font-size: 40px;
-    font-weight: 400;
+    font-size: 20px;
+    font-weight: 200;
     border-radius: 3px;
     border: none;
     background: #fff;
     color:black;
     outline: none;
     padding:  20px 30px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+}
+/* #messageForm .successMessage{
+  color: #333;
+  background-color: wheat;
+} */
+#successMessage.success {
+  display: block;
+  background-color: #333;
+  color: #fff;
+  border-color: whitesmoke;
+  box-shadow: 0 0 8px rgba(16, 185, 129, 0.25);
 }
 
-
 ::placeholder{
-    font-size: 30px;
+    font-size: 15px;
 }
 
 .text-center {
@@ -1184,12 +1201,12 @@ box-shadow: 0 20px 40px 0 rgb(11 2 55/8%);
 
 .info-link {
   display: inline-block;
-  padding: 16px 28px;
+  padding: 14px 26px;
   background-color: #4f7ef5;
   color: black;
-  font-size: 40px;
+  font-size: 15px;
   font-weight: bold;
-  border-radius: 10px;
+  border-radius: 9px;
   text-decoration: none;
   text-align: center;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
@@ -1279,38 +1296,38 @@ box-shadow: 0 20px 40px 0 rgb(11 2 55/8%);
 
 
 .contactForm {
-    border: 7px solid rgb(223, 156, 223);
-    border-radius: 15px ;
-  max-width: 800px;
+    border: 2px solid #8000ff;  
+    border-radius: 10px ;
+  max-width: 600px;
   margin: auto;
-  margin-top: 20px;
-  padding: 20px;
+  margin-top: 10px;
+  padding: 8px;
   background-color:	#f4f1fa;
-  box-shadow: 10px 10px 5px lightblue inset;
+  
 }
 
 .contactForm input,
 .contactForm textarea {
   width: 100%;
-  padding: 10px 5px;
-  margin-bottom: 15px;
-  font-size: 2rem;
+  padding: 8px 5px;
+  margin-bottom: 17px;
+  
   border: none;
   border-bottom: 2px solid #999;
   background: transparent;
   outline: none;
-  font-size: 16px;
+  font-size: 7px;
   transition: border-color 0.3s;
 }
 .contactForm input:not(:placeholder-shown),
 .contactForm textarea:not(:placeholder-shown) {
-  font-size: 2rem;
+  font-size: 1rem;
 }
 .contactForm button {
   width: 100%;
   padding: 10px;
   background-color: royalblue;
-  font-size: 30px;
+  font-size: 15px;
   color: white;
   border: none;
   border-radius: 5px;
@@ -2605,6 +2622,48 @@ footer input {
 footer p {
     color: #7b838a;
     font-size: 1rem;
+}
+.clock-box {
+  display: flex;
+  align-items: center;
+  gap: 30px; /* Space between time and date */
+  background-color: #1e1e1e;
+  color: #ccc;
+  padding: 5px 10px;
+  border-radius: 3px;
+
+ 
+  /* border: 2px solid white; 
+   box-shadow: 2px 2px  30px 20px green; 
+  width: fit-content;
+  margin: auto;
+  font-family: 'Segoe UI', sans-serif; */
+}
+
+
+
+
+
+     .clock {
+      /* background-color: #222; */
+      height: 100px;
+      width: fit-content;
+      color: #fff;
+      padding: 10px 20px ;
+      padding-top: 30px;
+      border-radius: 10px;
+      font-size: 2rem;
+       margin: auto;
+  text-align: center;
+   /* border: 5px solid white; */
+    filter: brightness(0.8);
+   
+    } 
+.clock-date {
+  font-size: 30px;
+  color: #fff;
+  margin-top: 10px;
+  transition: font-size 0.3s ease;
 }
 }
 @media(max-width:376px){

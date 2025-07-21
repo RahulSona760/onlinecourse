@@ -84,12 +84,12 @@
        </div>
    <div class="contactForm">
     <form action="" id="messageForm">
-        <input type="text" id="name" placeholder="Enter your Name">
-         <input type="text" id="email" placeholder="Enter your Email">
-          <input type="text" id="subject" placeholder="Enter your Subject">
-          <textarea name="" id="message" rows="5" placeholder="Enter your Message"></textarea>
-           <button type="submit">Submit</button>
-    <p id="successMessage" style="display: none; color: green; font-weight: bold;">
+        <input type="text" id="name" name="user_name" placeholder="Enter your Name">
+        <input type="text" id="email" name="user_email"  placeholder="Enter your Email">
+        <input type="text" id="subject" name="user_subject" placeholder="Enter your Subject">
+        <textarea name="message" id="message" rows="5" placeholder="Enter your Message"></textarea>
+        <button type="submit" class="submit-btn">Submit</button>
+         <p id="successMessage" style="display: none; background-color: aliceblue; color: #333; font-weight: bold;">
       ✅ Your request has been sent!
     </p>
     </form>
@@ -111,7 +111,80 @@
     $('#menu-close').click(function(){
         $('nav .navigation ul') .removeClass('active')
     });</script>
- <script src="app.js"></script>
+
+<!-- EmailJS Library -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+
+<script>
+  function showNotification(message, type) {
+    const successMessage = document.getElementById('successMessage');
+    successMessage.innerHTML = message;
+
+successMessage.classList.remove('success', 'error');
+  successMessage.classList.add(type === 'success' ? 'success' : 'error');
+
+    successMessage.style.display = 'block';
+  }
+
+  // Initialize form handling for EmailJS
+  function initializeFormHandling() {
+    const contactForm = document.getElementById('messageForm'); // Your form ID
+
+    if (contactForm) {
+      contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const submitBtn = this.querySelector('.submit-btn');
+        const originalText = submitBtn.textContent;
+
+        // Show loading state
+        submitBtn.textContent = 'Sending...';
+        submitBtn.disabled = true;
+
+        // Initialize EmailJS
+        if (window.emailjs) {
+          emailjs.init('8i5nX8joNDsRveiI1'); // Your Public Key
+
+          emailjs.sendForm('service_posfe2l', 'template_egqhtrd', this) // ✅ Service ID, Template ID
+            .then(() => {
+              showNotification(
+                `Hi <b>${this.elements['user_name'].value}</b>,<br><br>
+                ✅ Thank you for reaching out!<br><br>
+                We’ve received your message:<br>
+                <blockquote>"${this.elements['message'].value}"</blockquote><br>
+                We'll get back to you within 24 hours.<br><br>
+                Regards,<br>
+                Rahul<br>
+                <hr>
+                <small>This is an automated confirmation. Please don’t reply directly.</small>`,
+                'success'
+              );
+              this.reset();
+              submitBtn.textContent = originalText;
+              submitBtn.disabled = false;
+            }, (error) => {
+              console.error(error);
+              showNotification('❌ Sorry, there was an error sending your message. Please try again later.', 'error');
+              submitBtn.textContent = originalText;
+              submitBtn.disabled = false;
+            });
+
+        } else {
+          showNotification('❌ Email service not loaded. Please check your connection or try again later.', 'error');
+          submitBtn.textContent = originalText;
+          submitBtn.disabled = false;
+        }
+      });
+    }
+  }
+
+  // Initialize when DOM is ready
+  document.addEventListener('DOMContentLoaded', initializeFormHandling);
+</script>
+
+
+
+ <!-- <script src="app.js"></script> -->
 </body>
 </html>
 
