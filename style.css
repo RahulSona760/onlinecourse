@@ -8,11 +8,11 @@
 body{
      line-height: 1.6;
   font-family: Arial, sans-serif;
-font-family: Arial, sans-serif;
+    font-family: Arial, sans-serif;
 
     background:#D8B7DD;
     color: #333;
-    
+  
 
      
 }
@@ -159,7 +159,7 @@ nav img {
 #home{
 background-image: linear-gradient(rgba(9,5,54,0.3),rgba(5, 4, 46, 0.7)), url("back.jpg");
 width: 100%;
-height: 100vh;
+height: 60vh;
 background-size: cover;
 background-position: center;
 display: flex;
@@ -167,7 +167,8 @@ flex-direction: column;
 justify-content: center;
 align-items: center;
 text-align: center;
-padding: 40px;
+/* padding: 40px; */
+border-radius: 10px;
 }
 #home h2{
     color:#fff;
@@ -184,11 +185,8 @@ padding: 40px;
 }
 
 #home .btn{
-
-    margin-top: 30px;
-  
-    
-}
+ margin-top: 30px;
+  }
 
 
 #home a {
@@ -285,9 +283,11 @@ transition: transform 0.3s ease;
 
 #course{
    
-    padding: 60px 5%;
+    /* padding: 60px 5%; */
     background-color: #f8f8f8;
     text-align: center;
+    margin-top: 80px;
+    border-radius: 5px;
  
 }
 #course h1{
@@ -491,6 +491,7 @@ transition: transform 0.3s ease;
 #experts{
   background-color:#fff;
     padding: 8vw 8vw 8vw 8vw;
+    margin-top: 50px;
     text-align: center;
     border: 5px solid white;
     box-shadow: 2px 2px  30px 20px white;
@@ -579,10 +580,11 @@ footer{
     flex-wrap:wrap ;
     border-radius: 10px; */
       text-align: center;
-  padding: 20px;
+  /* padding: 20px; */
   background-color: #333;
   color: #fff;
   margin-top: 30px;
+  border-radius: 8px;
 }
 footer .footer-col{
     padding-bottom: 30px;
@@ -1380,7 +1382,7 @@ button {
           Media Queries
     ================================= */
 @media (max-width: 1224px) {
-  .courses {
+  .course {
     width: 300px;
   }
   nav .navigation ul li a{
@@ -1476,9 +1478,9 @@ nav img {
     font-size: 16px;
   }
   /* =======================Course-Section===================== */
-  .courses {
+  /* .courses {
     width: 280px;
-  }
+  } */
 
   #course h1 {
     font-size: 2rem;
@@ -1619,7 +1621,7 @@ nav img {
 
     /* ======================Coure-Section==================== */
     #courses{
-        padding:8vw 4vw 0 4vw ;
+        /* padding:8vw 4vw 0 4vw ; */
     display: flex;
     flex-wrap: wrap;
     }
@@ -1732,25 +1734,12 @@ right: 0;
         width:130px;
        
     }
-    #home {
-        padding-top:0 ;
-    }
+  
     #home p {
 width: 90%;
     }
 
-    /* =======================
-          feature-section
-    ==================== */
-    /* #features{
-        padding: 8vw 4vw 0 4vw;
-    }
-    #features .fea-box h3 {
-        font-size: 2rem;
-        
-        font-weight: 200;
-       
-    } */
+    
   .fea-base {
     flex-direction: column;
     align-items: center;
@@ -1768,25 +1757,11 @@ width: 90%;
 /* ==============course Section */
 
 .course {
-      margin: 0 auto;
-    padding: 10px;
-    flex: 1 1 100%; /* Full width – one card per row */
+      /* margin: 0 auto; */
+    /* padding: 10px; */
+    flex: 1 1 100%; 
   }
-/* .course-btn {
-    width: 100%;
-    text-align: center;
-    margin-top: 10px;
-  } */
 
-  /* .course-btn a {
-    display: inline-block;
-    width: 90%;
-    padding: 12px 0;
-    font-size: 1rem;
-  } */
-    /* #courses{
-        padding:8vw 4vw 0 4vw ;
-    } */
     #course .courses img {
         width: 100%;
         height: 200px;
@@ -2022,6 +1997,7 @@ contactForm-Section Through Firebase================= */
   .menu-toggle {
     font-size: 24px;
   }
+   
 
   .container {
     margin-top: 110px;
@@ -2131,6 +2107,13 @@ contactForm-Section Through Firebase================= */
    }
 
   @media (max-width: 480px) {
+    #home {
+    background-image: linear-gradient(rgba(9,5,54,0.3),rgba(5, 4, 46, 0.7)), url("back.jpg");
+    width: 100%;
+    height: 100vh;
+    
+}
+
 nav .logo {
     font-size: 1.2rem;
 }
@@ -2326,9 +2309,9 @@ nav img {
     #home {
         background-image: linear-gradient(rgba(9,5,54,0.3),rgba(5, 4, 46, 0.7)), url("back.jpg");
         width: 100%;
-        height: 100vh;
-        margin-left: 40px;
-        border-radius: 10px;
+        /* height: 100vh; */
+        /* margin-left: 40px;
+        border-radius: 10px; */
   
     }
     h2 {
@@ -2583,16 +2566,10 @@ h1 {
     box-shadow: 0 8px 32px 0 rgba(31,38,135,37);
 }
 footer {
-    margin-left: 30px;
+    /* margin-left: 30px; */
     margin-top: 50px;
-    padding: 9vw;
-    /* background-color: #101c32;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    border-radius: 10px;
-} */
+    /* padding: 9vw; */
+    
 }
 footer h3 {
     font-size: 30px;
@@ -2633,11 +2610,6 @@ footer p {
   border-radius: 3px;
 
  
-  /* border: 2px solid white; 
-   box-shadow: 2px 2px  30px 20px green; 
-  width: fit-content;
-  margin: auto;
-  font-family: 'Segoe UI', sans-serif; */
 }
 
 
